@@ -37,11 +37,21 @@ public class PortalTeleport : MonoBehaviour
         {
             playerIsOverlapping = true;
         }
+
+        if (other.tag == "PickableObject")
+        {
+            playerIsOverlapping = true;
+        }        
     }
 
     void OnTriggerExit(Collider other)
     {
         if (other.tag == "TargetedSpaces")
+        {
+            playerIsOverlapping = false;
+        }
+
+        if (other.tag == "PickableObject")
         {
             playerIsOverlapping = false;
         }
