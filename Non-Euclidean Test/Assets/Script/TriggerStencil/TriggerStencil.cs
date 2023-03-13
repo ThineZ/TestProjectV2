@@ -21,11 +21,13 @@ public class TriggerStencil : MonoBehaviour
                 if (TriggerCounter == 1) 
                 {
                     i.layer = LayerInt[0];
+                    i.GetComponent<BoxCollider>().isTrigger = false;
                 }
 
                 if (TriggerCounter == 2)
                 {
                     i.layer = LayerInt[1];
+                    i.GetComponent<BoxCollider>().isTrigger = true;
                 }
             }
         }
