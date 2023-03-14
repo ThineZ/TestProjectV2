@@ -31,7 +31,7 @@ public class PortalTeleport : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "TargetedSpaces")
         {
@@ -44,7 +44,7 @@ public class PortalTeleport : MonoBehaviour
         }        
     }
 
-    void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.tag == "TargetedSpaces")
         {
