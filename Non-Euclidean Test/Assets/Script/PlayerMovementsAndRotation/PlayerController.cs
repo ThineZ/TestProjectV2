@@ -29,11 +29,15 @@ public class PlayerController : MonoBehaviour
     public Rigidbody PickObjectRB;
     public bool isHolding = false;
 
+    [Header("Dead Check")]
+    public bool isDead = false;
+
 
     private void Update()
     {
         Movements();
         Raycasts();
+        DeadCheck();
     }
 
     private void Movements()
@@ -92,6 +96,22 @@ public class PlayerController : MonoBehaviour
             }
             isInteract = false;
             isDrop = false;
+        }
+    }
+
+    void DeadCheck()
+    {
+        if (isDead)
+        {
+            moveSpeed = 0;
+            Look.xSensitivity = 0;
+            Look.ySensitivity = 0;
+        }
+        else if (!isDead)
+        {
+            moveSpeed = 5;
+            Look.xSensitivity = 20;
+            Look.ySensitivity = 20;
         }
     }
 
