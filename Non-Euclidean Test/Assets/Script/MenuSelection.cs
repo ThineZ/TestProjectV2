@@ -15,6 +15,14 @@ public class MenuSelection : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public string BlueSetBoolName;
     public string RedSetBoolName;
 
+    [Header("Audio")]
+    public AudioSource AudioSource;
+
+    private void Start()
+    {
+        AudioSource = GetComponent<AudioSource>();
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         Blue.SetActive(true);
@@ -22,6 +30,8 @@ public class MenuSelection : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
         BlueAnim.SetBool(BlueSetBoolName, true);
         RedAnim.SetBool(RedSetBoolName, true);
+
+        AudioSource.Play();
     }
 
     public void OnPointerExit(PointerEventData eventData)

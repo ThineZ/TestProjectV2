@@ -12,6 +12,14 @@ public class MainMenuLogic : MonoBehaviour
     [Header("Objects")]
     public GameObject Space;
 
+    private AudioSource Souce;
+    public AudioClip SouceClip;
+
+    private void Start()
+    {
+        Souce = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -22,6 +30,12 @@ public class MainMenuLogic : MonoBehaviour
             Option.SetBool("IfOption", true);
             Exit.SetBool("IfExit", true);
             Space.SetActive(false);
+            Souce.PlayOneShot(Souce.clip = SouceClip);
+        }
+        else if (Space.activeInHierarchy == false)
+        {
+            SouceClip = null;
+            Souce.PlayOneShot(Souce.clip = SouceClip);
         }
     }
 }
