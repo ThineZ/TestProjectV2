@@ -35,7 +35,7 @@ public class MainMenuLogic : MonoBehaviour
         else if (Space.activeInHierarchy == false)
         {
             SouceClip = null;
-            Souce.PlayOneShot(Souce.clip = SouceClip);
+            Souce.clip = SouceClip;
         }
     }
 }
