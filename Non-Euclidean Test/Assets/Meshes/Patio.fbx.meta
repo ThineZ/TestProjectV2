@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Cubemap
       assembly: UnityEngine.CoreModule
       name: diffuse_cube
-    second: {fileID: 8900000, guid: e6951b9fb54b7894d98225ce0f06f479, type: 3}
+    second: {fileID: 8900000, guid: 21b8ef2f819297c40a165bf6b2ffe970, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -22,53 +22,108 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: darker
+    second: {fileID: 2100000, guid: 122ee7d8d6b1c994ca0bac9c499d9ed4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: delay
+    second: {fileID: 2100000, guid: a8cd42b5dc6174549b93752aa20d1a44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: goldfloor
+    second: {fileID: 2100000, guid: 678ec60ab29ea1b4486c676e6f2a12dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inner
+    second: {fileID: 2100000, guid: 5e48a981c40a30d46bfd89cd3415dcb2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: lambert1
     second: {fileID: 2100000, guid: 8c2063fa56432b24797cb9b176a1d91c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert17
+    second: {fileID: 2100000, guid: 999a7a3d2bcb7364fb1f5bf630f56e3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: roof
+    second: {fileID: 2100000, guid: 887efe3825f487344b8d0a87f6be9547, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sidedwall
+    second: {fileID: 2100000, guid: c0704122cdf85fb429bd05f7cb4a806a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stickywood
+    second: {fileID: 2100000, guid: 6c46caa35dee5794fb0b4649f777c228, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiang
+    second: {fileID: 2100000, guid: bf3a4d99cef73104298e53d4a9e86065, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: upwall
+    second: {fileID: 2100000, guid: a5dfb1d279844c64694710777503e997, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: woodenroof
+    second: {fileID: 2100000, guid: 71a38adde5ffe5d46b6666c1ebec591b, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: ibl_brdf_lut
-    second: {fileID: 2800000, guid: 5227ee091ffd3e248a9303c23ba39788, type: 3}
+    second: {fileID: 2800000, guid: c81f042bba8bbdb439dfc33dda47acc7, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: tfilfair_2K_Albedo
-    second: {fileID: 2800000, guid: db454ea09e63f174086b878ce6c22b8b, type: 3}
+    second: {fileID: 2800000, guid: 23f17020249adf5448b5bcd611f0a95e, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: tfilfair_2K_Displacement
-    second: {fileID: 2800000, guid: 128ed79dac43e4540a2e2a1e1a5340c6, type: 3}
+    second: {fileID: 2800000, guid: 92d0afc64fd584940a48c966546a5241, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: tfilfair_2K_Normal
-    second: {fileID: 2800000, guid: ca9c5d4c0da38464f953977636139d67, type: 3}
+    second: {fileID: 2800000, guid: 43ab349049196d54b9a32deb446e8bbd, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: tfilfair_2K_Roughness
-    second: {fileID: 2800000, guid: 381ef8c1e18e76046aee333a76fe7b02, type: 3}
+    second: {fileID: 2800000, guid: 8e5b803c3f780bb41bfffd02c47c2019, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: tfimbdcr_2K_AO
-    second: {fileID: 2800000, guid: b788ae91af83a3a4db3f981c4871943d, type: 3}
+    second: {fileID: 2800000, guid: 75fadff82f4630c498e509a699899039, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: tfimbdcr_2K_Displacement
-    second: {fileID: 2800000, guid: c48fd2d838d3732428a261a374f88e88, type: 3}
+    second: {fileID: 2800000, guid: 8dcfbe54e8c65474886015f7d99a37ba, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: tfimbdcr_2K_Normal
-    second: {fileID: 2800000, guid: c59a8bb371be26f48a5404f7aa563f11, type: 3}
+    second: {fileID: 2800000, guid: 94557366cbb4abd438e4ea69058d9ec5, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: tfimbdcr_2K_Roughness
-    second: {fileID: 2800000, guid: b95fa7122b6e14340a238bb942a7ac46, type: 3}
+    second: {fileID: 2800000, guid: 3bb94f9677493f44fbd4b13b1001f24f, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
