@@ -1,20 +1,45 @@
-Shader "Custom/DepthMask"
-{
-	SubShader
-    {
-        // Render the mask after regular geometry, but before masked geometry and
-        // transparent things.
+Shader "Stencils/Masks/DepthMaskBackFaces" 
+{	
+	SubShader 
+	{
+		Tags
+		{ 
+			"RenderType"		= "DepthMaskBackFaces" 
+			"Queue"				= "Geometry-120"
+			"IgnoreProjector"	= "True"
+		}
 
-        Tags 
-        {
-            "Queue" = "Geometry + 10" 
-        }
- 
-        // Don't draw in the RGBA channels; just the depth buffer
-        ColorMask 0
-        ZWrite On
- 
-        // Do nothing specific in the pass:
-        Pass {}
-    }
+		ColorMask 0		
+		Cull Front
+		
+		Pass
+		{
+		CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+			
+			struct appdata 
+			{
+				float4 vertex : POSITION;
+			};
+			
+			struct v2f 
+			{
+				float4 pos : SV_POSITION;
+			};
+			
+			v2f vert(appdata v) 
+			{
+				v2f o;
+				o.pos = UnityObjectToClipPos(v.vertex);
+				return o;
+			}
+			
+			half4 frag(v2f i) : COLOR 
+			{
+				return half4(1,1,0,1);
+			}
+		ENDCG
+		}
+	} 
 }

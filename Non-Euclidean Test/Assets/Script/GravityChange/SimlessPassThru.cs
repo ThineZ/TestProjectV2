@@ -1,56 +1,92 @@
+using System.Collections;
 using UnityEngine;
 
 public class SimlessPassThru : MonoBehaviour
 {
-    [Header("Layer Array")]
-    public GameObject[] LayerObject;
+    [SerializeField] bool isTrigger = false;
+    [SerializeField] int TriggerCount;
 
-    [Header("Player Camera")]
-    public Camera MainCamera;
+    [Header("ToMask Layer Objects")]
+    public GameObject[] ToMaskObjects;
 
-    public int[] LayerIndex;
+    [Header("Default Layer Object")]
+    public GameObject[] DefaultObjects;
 
-    public bool isTrigger = false;
+    [Header("View Object")]
+    public GameObject ViewOneClip;
+    public GameObject ViewTwoClip;
 
     private void Update()
     {
-        TriggerEnable();
-        TriggerDisable();
+        //SwitchLayer();
+
+        StartCoroutine(SwitchLayerDelay());
+
+        if (TriggerCount >= 2)
+        {
+            TriggerCount = 0;
+        }
+
+        isTrigger = false;
     }
 
-    private void TriggerEnable()
+    IEnumerator SwitchLayerDelay()
     {
         if (isTrigger)
         {
-            LayerObject[0].layer = LayerIndex[0];
-            LayerObject[1].layer = LayerIndex[1];
-        }
-        isTrigger = false;
-    }
+            TriggerCount++;
 
-    private void TriggerDisable() 
-    {        
-        if (isTrigger == true && LayerObject[0].layer == LayerIndex[0])
-        {
-            LayerObject[0].layer = LayerIndex[1];
-            LayerObject[1].layer = LayerIndex[0];
+            // To Switch the ToMaskObject to Default Layer and Set ViewOne (SetActive = false)
+            if (TriggerCount == 1)
+            {
+                ViewOneClip.SetActive(false);
+                ViewTwoClip.SetActive(true);
+
+                foreach (GameObject i in ToMaskObjects)
+                {
+                    i.layer = 0;
+                }
+
+                foreach (GameObject j in DefaultObjects)
+                {
+                    j.layer = 7;
+                }
+            }
+
+
+            // To Switch the ToMaskObject to ToMask Layer and Set ViewTwo (SetActive = false)
+            if (TriggerCount == 2)
+            {
+                ViewOneClip.SetActive(true);
+                ViewTwoClip.SetActive(false);
+
+                foreach (GameObject i in ToMaskObjects)
+                {
+                    i.layer = 7;
+                }
+
+                foreach (GameObject j in DefaultObjects)
+                {
+                    j.layer = 0;
+                }
+            }
         }
-        isTrigger = false;
+        yield return null;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Main Camera") 
+        if (other.gameObject.name == "Player")
         {
             isTrigger = true;
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.name == "Main Camera")
+        if (other.gameObject.name == "Player")
         {
-            isTrigger = true;
+            isTrigger = false;
         }
     }
 }
