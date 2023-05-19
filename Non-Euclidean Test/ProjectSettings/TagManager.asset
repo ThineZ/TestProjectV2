@@ -19,7 +19,11 @@ TagManager:
   - ToDefault
   - MaskDefault
   - PickUpMask
+
+  - PlacedMask
+
   - 
+
   - 
   - 
   - 
