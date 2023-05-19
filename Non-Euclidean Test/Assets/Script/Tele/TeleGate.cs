@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+
 public class TeleGate : MonoBehaviour
 {
     public GameObject GateObject;
