@@ -300,6 +300,7 @@ MonoBehaviour:
   PickObjTransform: {fileID: 4509368520866398869}
   PickUpRange: 5
   CurrentObject: {fileID: 0}
+  Dot: {fileID: 3748554989891860623}
 --- !u!114 &5298343864998489289
 MonoBehaviour:
   m_ObjectHideFlags: 0
