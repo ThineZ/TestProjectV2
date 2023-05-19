@@ -26,7 +26,7 @@ public class ColorMatchLock : MonoBehaviour
 
     private void Update()
     {
-        if (KeyObj.tag == "Untagged")
+        if (KeyObj.tag == "Untagged" && ColorHint.activeInHierarchy == false)
         {
             GateQuad.layer = 6;
             Tele.SetActive(true);
@@ -44,13 +44,9 @@ public class ColorMatchLock : MonoBehaviour
             KeyObj.GetComponent<Rigidbody>().isKinematic = true;
             KeyObj.GetComponent<Rigidbody>().useGravity = false;
 
-
-            if (other.tag == "PickableObject")
-            {
-                KeyObj.tag = "Untagged";
-                ColorHint.SetActive(false);
-                ControlPanelMR.material = Yellow;
-            }
+            KeyObj.tag = "Untagged";
+            ColorHint.SetActive(false);
+            ControlPanelMR.material = Yellow;
         }
     }
 }

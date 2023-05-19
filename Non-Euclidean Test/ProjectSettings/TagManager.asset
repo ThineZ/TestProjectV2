@@ -18,8 +18,12 @@ TagManager:
   - ToMask
   - ToDefault
   - MaskDefault
+  - PickUpMask
+
+  - PlacedMask
+
   - 
-  - 
+
   - 
   - 
   - 

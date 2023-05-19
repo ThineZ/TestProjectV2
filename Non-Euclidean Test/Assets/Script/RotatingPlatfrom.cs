@@ -1,13 +1,16 @@
 using System.Collections;
 using UnityEngine;
 
-public class TeleGateWCam : MonoBehaviour
+public class RotatingPlatfrom : MonoBehaviour
 {
-    public GameObject GateObject;
+    [Header("Player Object")]
     public GameObject Player;
     public PlayerController PlayerController;
+    [Space]
+    [Header("Teleport Object")]
+    public GameObject TeleCollider;
 
-    public bool isEntered = false;
+    public bool isEnter = false;
 
     private void Update()
     {
@@ -16,12 +19,12 @@ public class TeleGateWCam : MonoBehaviour
 
     IEnumerator Tele()
     {
-        if (isEntered)
+        if (isEnter)
         {
             PlayerController.isDead = true;
             yield return new WaitForSeconds(0.01f);
-            Player.transform.Rotate(Vector3.up * 180);
-            Player.transform.position = GateObject.transform.position;
+            Player.transform.Rotate(Vector3.right / 180);
+            Player.transform.position = TeleCollider.transform.position;
             yield return new WaitForSeconds(0.01f);
             PlayerController.isDead = false;
         }
@@ -31,7 +34,7 @@ public class TeleGateWCam : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            isEntered = true;
+            isEnter = true;
         }
     }
 
@@ -39,7 +42,7 @@ public class TeleGateWCam : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            isEntered = false;
+            isEnter = false;
         }
     }
 }

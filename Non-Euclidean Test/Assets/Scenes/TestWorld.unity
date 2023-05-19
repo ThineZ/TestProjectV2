@@ -2952,7 +2952,7 @@ GameObject:
   - component: {fileID: 1467515667}
   - component: {fileID: 1467515666}
   - component: {fileID: 1467515670}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pickable
   m_TagString: PickableObject
   m_Icon: {fileID: 0}
