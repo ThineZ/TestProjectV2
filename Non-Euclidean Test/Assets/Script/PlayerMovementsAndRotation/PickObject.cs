@@ -1,6 +1,10 @@
+
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+
+using UnityEngine;
+
 
 public class PickObject : MonoBehaviour
 {
@@ -10,9 +14,12 @@ public class PickObject : MonoBehaviour
     [Space]
     [SerializeField] private float PickUpRange;
     public Rigidbody CurrentObject;
+
     [Space]
     [Header("Dot")]
     public Image Dot;
+
+
 
     private void Update()
     {
@@ -22,10 +29,14 @@ public class PickObject : MonoBehaviour
             {
                 CurrentObject.useGravity = true;
                 CurrentObject.freezeRotation = false;
+
                 CurrentObject.isKinematic = false;
                 CurrentObject = null;
 
                 Dot.color = Color.red;
+
+                CurrentObject = null;
+
                 return;
             }
 
@@ -33,6 +44,7 @@ public class PickObject : MonoBehaviour
 
             if (Physics.Raycast(CameraRay, out RaycastHit HitInfo, PickUpRange, PickUpMask))
             {
+
                 Debug.Log(HitInfo.collider.gameObject.name);
                 Debug.Log(HitInfo.rigidbody.gameObject.name);
                 Debug.Log(HitInfo.rigidbody);
@@ -41,6 +53,16 @@ public class PickObject : MonoBehaviour
                 CurrentObject.freezeRotation = true;
                 CurrentObject.isKinematic = false;
                 Dot.color = Color.yellow;
+
+                CurrentObject = HitInfo.rigidbody;
+                CurrentObject.useGravity = false;
+                CurrentObject.freezeRotation = true;
+            }
+
+            if (CurrentObject.isKinematic == true)
+            {
+                CurrentObject = null;
+
             }
         }
     }
@@ -55,6 +77,7 @@ public class PickObject : MonoBehaviour
             CurrentObject.velocity = DirectionToPoint * 12f * DistanceToPoint;
          }
     }
+
 
     public void DetectPlaced()
     {
@@ -77,4 +100,6 @@ public class PickObject : MonoBehaviour
             Dot.color = Color.red;
         }
     }
+
+
 }
