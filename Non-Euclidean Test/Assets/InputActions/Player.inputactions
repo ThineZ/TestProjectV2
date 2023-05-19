@@ -33,15 +33,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "cd120250-cfa6-43a7-a546-5ba531385c07",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Interact",
                     "type": "Button",
                     "id": "9364a83c-5a4c-41e2-91f8-f13a97b414a0",
@@ -51,9 +42,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Drop",
+                    "name": "RunPress",
                     "type": "Button",
-                    "id": "b5427663-bb9c-4ca5-bb88-d42a15e91d06",
+                    "id": "cbc652b5-fd4d-4bae-a3a9-df430dbf6a8e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RunRelease",
+                    "type": "Button",
+                    "id": "c74cebce-d9c7-4e11-a3df-012ec7f3dc58",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -283,17 +283,6 @@
                 },
                 {
                     "name": "",
-                    "id": "2ba334fa-7185-4109-85b4-817024d3c99c",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "13a0ad26-1c6b-4d55-8d2e-e2cda18fd3a0",
                     "path": "<Keyboard>/e",
                     "interactions": "",
@@ -305,12 +294,23 @@
                 },
                 {
                     "name": "",
-                    "id": "e3f8bde0-c307-458a-bbf1-3bc2edce1bd2",
-                    "path": "<Keyboard>/q",
-                    "interactions": "",
+                    "id": "b5a7f206-6c73-4641-b538-0b3bc9fea4e4",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Drop",
+                    "action": "RunPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "88fd3fd5-1da5-4f4f-90e6-b7e9cde7a797",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RunRelease",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

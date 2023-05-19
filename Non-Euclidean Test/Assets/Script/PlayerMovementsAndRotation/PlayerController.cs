@@ -1,43 +1,37 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
 public class PlayerController : MonoBehaviour
 {
     Vector3 movements = Vector3.zero;
 
     [Header("Player Parameters")]
     public float moveSpeed;
-    public float JumpHeight;
-    public bool canJump;
+    public float runSpeed;
     private PlayerLook Look;
+
+    [Header("Grab Parameters")]
+    public Transform ObjPos;
+    public GameObject PickObj;
 
 
     [Header("Raycast Parameters")]
     public float interactionDistance;
     // Bool Check
     [SerializeField] private bool isInteract = false;
-    [SerializeField] bool isDrop = false;
-
-
-    [Header("Transform")]
-    public Transform GrabTransform;
-
-
-    [Header("Pick Object Parameter")]
-    public GameObject PickObject;
-    public Rigidbody PickObjectRB;
-    public bool isHolding = false;
+    [SerializeField] bool isRunning = false;
 
     [Header("Dead Check")]
     public bool isDead = false;
-
 
     private void Update()
     {
         Movements();
         Raycasts();
         DeadCheck();
+        Sprint();
+
+        Cursor.visible = false;
     }
 
     private void Movements()
@@ -74,28 +68,34 @@ public class PlayerController : MonoBehaviour
 
             if (hitInfo.transform.tag == "PickableObject")
             {
-                if (isInteract)
+                if (isInteract) 
                 {
-                    Debug.Log("Is Grabing");
-                    PickUpObject(hitInfo.transform.gameObject);
-                    isHolding = true;
+                    
                 }
             }
 
-            if (hitInfo.transform.tag == "TargetedSpaces")
-            {
-                if (isDrop)
-                {
-                    if (isHolding)
-                    {
-                        Debug.Log("Is Droping");
-                        DropObject();
-                        isHolding = false;
-                    }
-                }
-            }
             isInteract = false;
-            isDrop = false;
+        }
+    }
+
+    private void Sprint()
+    {
+        if (isRunning)
+        {
+            Vector3 runVector = Vector3.zero;
+
+            // Add the forward direction of the player multiplied by the forward force
+            runVector += transform.forward * movements.y;
+
+            // Add the right direction of the player mutiplie by the right force
+            runVector += transform.right * movements.x;
+
+            // Apply the movment vector multiplied by movement speed to the player's position
+            transform.position += runVector * runSpeed * Time.deltaTime;
+        }
+        else
+        {
+            isRunning = false;
         }
     }
 
@@ -115,54 +115,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void PickUpObject(GameObject pickUpObject)
-    {
-        if (pickUpObject.GetComponent<Rigidbody>())
-        {
-            PickObject = pickUpObject;
-            PickObjectRB = pickUpObject.GetComponent<Rigidbody>();
-            PickObjectRB.isKinematic = true;
-            PickObject.transform.parent = GrabTransform;
-            PickObject.transform.position = GrabTransform.position;
-            PickObject.transform.tag = "TargetedSpaces";
-        }
-    }
-
-    void DropObject()
-    {
-        PickObjectRB.isKinematic = false;
-        PickObject.transform.parent = null;
-        PickObject.transform.tag = "PickableObject";
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-        {
-            canJump = true;
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-        {
-            canJump = false;
-        }
-    }
-
     void OnMove(InputValue moveValue)
     {
         movements = moveValue.Get<Vector2>();
-    }
-
-    void OnJump(InputValue jumpValue)
-    {
-        if (canJump)
-        {
-            GetComponent<Rigidbody>().AddForce(Vector3.up * JumpHeight, ForceMode.Impulse);
-            canJump = false;
-        }
     }
 
     void OnInteract(InputValue interactValue)
@@ -170,8 +125,13 @@ public class PlayerController : MonoBehaviour
         isInteract = true;
     }
 
-    void OnDrop(InputValue dropValue)
+    void OnRunPress()
     {
-        isDrop = true;
+        isRunning = true;
+    }
+
+    void OnRunRelease()
+    {
+        isRunning = false;
     }
 }
