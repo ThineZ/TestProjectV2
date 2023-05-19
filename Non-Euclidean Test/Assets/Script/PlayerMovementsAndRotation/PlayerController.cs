@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public float interactionDistance;
     // Bool Check
     [SerializeField] private bool isInteract = false;
-    [SerializeField] private bool isDrop = false;
+    [SerializeField] bool isDrop = false;
 
 
     [Header("Transform")]

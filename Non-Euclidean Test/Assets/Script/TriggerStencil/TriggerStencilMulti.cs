@@ -37,12 +37,12 @@ public class TriggerStencilMulti : MonoBehaviour
             {
                 if (TriggerCounter == 1)
                 {
-                    j .layer = LayerInt[2];
+                    j.layer = LayerInt[2];
                 }
 
                 if (TriggerCounter == 2)
                 {
-                    j .layer = LayerInt[3];
+                    j.layer = LayerInt[3];
                 }
             }
         }
