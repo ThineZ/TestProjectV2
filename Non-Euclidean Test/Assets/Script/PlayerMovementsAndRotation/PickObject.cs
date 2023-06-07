@@ -3,9 +3,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-using UnityEngine;
-
-
 public class PickObject : MonoBehaviour
 {
     [SerializeField] private LayerMask PickUpMask;
