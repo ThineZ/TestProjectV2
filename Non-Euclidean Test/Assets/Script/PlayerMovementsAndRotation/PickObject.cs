@@ -1,4 +1,3 @@
-
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,12 +10,11 @@ public class PickObject : MonoBehaviour
     [Space]
     [SerializeField] private float PickUpRange;
     public Rigidbody CurrentObject;
+    public GameObject GCurrentObj;
 
     [Space]
     [Header("Dot")]
     public Image Dot;
-
-
 
     private void Update()
     {
@@ -33,6 +31,7 @@ public class PickObject : MonoBehaviour
                 Dot.color = Color.red;
 
                 CurrentObject = null;
+                GCurrentObj = null;
 
                 return;
             }
@@ -46,20 +45,16 @@ public class PickObject : MonoBehaviour
                 Debug.Log(HitInfo.rigidbody.gameObject.name);
                 Debug.Log(HitInfo.rigidbody);
                 CurrentObject = HitInfo.rigidbody;
+                GCurrentObj = HitInfo.transform.gameObject;
                 CurrentObject.useGravity = false;
                 CurrentObject.freezeRotation = true;
                 CurrentObject.isKinematic = false;
                 Dot.color = Color.yellow;
-
-                CurrentObject = HitInfo.rigidbody;
-                CurrentObject.useGravity = false;
-                CurrentObject.freezeRotation = true;
             }
 
             if (CurrentObject.isKinematic == true)
             {
                 CurrentObject = null;
-
             }
         }
     }
