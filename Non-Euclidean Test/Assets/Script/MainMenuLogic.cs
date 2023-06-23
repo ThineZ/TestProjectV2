@@ -22,6 +22,8 @@ public class MainMenuLogic : MonoBehaviour
 
     private void Update()
     {
+        Event e = Event.current;
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Title.SetBool("IfSpaceHit", true);
@@ -36,6 +38,11 @@ public class MainMenuLogic : MonoBehaviour
         {
             SouceClip = null;
             Souce.clip = SouceClip;
+        }
+
+        if (e.isKey)
+        {
+            Debug.Log("Key Press");
         }
     }
 }
