@@ -20,8 +20,13 @@ TagManager:
   - MaskDefault
   - PickUpMask
   - NonViewablePlan
+<<<<<<< Updated upstream
   - InteractableItems
   - 
+=======
+  - Player
+  - Ground
+>>>>>>> Stashed changes
   - 
   - 
   - 
