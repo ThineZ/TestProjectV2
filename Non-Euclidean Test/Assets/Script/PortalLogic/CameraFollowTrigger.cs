@@ -11,6 +11,7 @@ public class CameraFollowTrigger : MonoBehaviour
 
     [Header("Offset Parameter")]
     public Vector3 Offset;
+    public Quaternion PlayerCamRotation;
     public float OffsetFollowSpeed;
     public bool PlayerEnter = false;
 
@@ -27,8 +28,12 @@ public class CameraFollowTrigger : MonoBehaviour
     private void Update()
     {
         if (PlayerEnter) 
-        { 
-            FollowCamera.transform.rotation = Quaternion.EulerAngles(PlayerMainCamera.rotation.x, PlayerObjectTarget.rotation.y, 0);
+        {
+            // Consitent update of Player Camera Rotation Values in Quaternion
+            PlayerCamRotation = PlayerMainCamera.rotation;
+            
+            // Set the "PlayerCamRotation Quaternion Values to FollowCamera Rotation"
+            FollowCamera.transform.rotation = PlayerCamRotation;
         }
     }
 
