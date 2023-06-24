@@ -20,9 +20,14 @@ public class PlayerController : MonoBehaviour
     // Bool Check
     [SerializeField] private bool isInteract = false;
     [SerializeField] bool isRunning = false;
+    [SerializeField] bool isFire = false;
 
     [Header("Dead Check")]
     public bool isDead = false;
+
+    [Space]
+    [Header("Light")]
+    public Light[] Lights;
 
     private void Update()
     {
@@ -68,10 +73,17 @@ public class PlayerController : MonoBehaviour
 
             if (hitInfo.transform.tag == "PickableObject")
             {
-                if (isInteract) 
-                {
+                //if (isInteract) 
+                //{
                     
-                }
+                //}
+            }
+
+            if (isFire && hitInfo.transform.gameObject.layer == 12)
+            {
+                Lights[0].enabled = true;
+                Lights[1].enabled = true;
+                Lights[2].enabled = true;
             }
 
             isInteract = false;
@@ -133,5 +145,15 @@ public class PlayerController : MonoBehaviour
     void OnRunRelease()
     {
         isRunning = false;
+    }
+
+    void OnFire()
+    {
+        isFire = true;
+    }
+    
+    void OnFireR()
+    {
+        isFire = false;
     }
 }
