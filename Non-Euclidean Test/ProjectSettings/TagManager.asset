@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - PickableObject
+  - TargetedSpaces
   layers:
   - Default
   - TransparentFX
@@ -11,24 +14,18 @@ TagManager:
   - 
   - Water
   - UI
-<<<<<<< Updated upstream
   - Mask
   - ToMask
   - ToDefault
   - MaskDefault
   - PickUpMask
   - NonViewablePlan
+<<<<<<< Updated upstream
   - InteractableItems
   - 
 =======
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Ground
 >>>>>>> Stashed changes
   - 
   - 

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8744477718047987612}
   - component: {fileID: 8744477718047987615}
   - component: {fileID: 8744477718047987614}
-  - component: {fileID: 4301303661887484574}
   m_Layer: 12
   m_Name: UpdatedPlayer
   m_TagString: Untagged
@@ -72,19 +71,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   orientation: {fileID: 8744477719711977165}
---- !u!114 &4301303661887484574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8744477718047987613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42bd140575a59904ea31d97949ca24ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hands: {fileID: 8744477719711977202}
 --- !u!1 &8744477718186288420
 GameObject:
   m_ObjectHideFlags: 0

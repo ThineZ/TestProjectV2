@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -7,13 +6,9 @@ public class PlayerController : MonoBehaviour
     Vector3 movements = Vector3.zero;
 
     [Header("Player Parameters")]
-    public Transform orientation;
-    Vector3 moveDirection;
-    Rigidbody rb;
-    private PlayerLook Look;
-    float horizontalInput;
-    float verticalInput;
     public float moveSpeed;
+    public float runSpeed;
+    private PlayerLook Look;
 
     [Header("Grab Parameters")]
     public Transform ObjPos;
@@ -53,8 +48,16 @@ public class PlayerController : MonoBehaviour
 
     private void Movements()
     {
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-        rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        Vector3 moveVector = Vector3.zero;
+
+        // Add the forward direction of the player multiplied by the forward force
+        moveVector += transform.forward * movements.y;
+
+        // Add the right direction of the player mutiplie by the right force
+        moveVector += transform.right * movements.x;
+
+        // Apply the movment vector multiplied by movement speed to the player's position
+        transform.position += moveVector * moveSpeed * Time.deltaTime;
     }
 
     private void Raycasts()
@@ -98,12 +101,20 @@ public class PlayerController : MonoBehaviour
     {
         if (isRunning)
         {
-            moveSpeed = 8;
+            Vector3 runVector = Vector3.zero;
+
+            // Add the forward direction of the player multiplied by the forward force
+            runVector += transform.forward * movements.y;
+
+            // Add the right direction of the player mutiplie by the right force
+            runVector += transform.right * movements.x;
+
+            // Apply the movment vector multiplied by movement speed to the player's position
+            transform.position += runVector * runSpeed * Time.deltaTime;
         }
         else
         {
             isRunning = false;
-            moveSpeed = 5;
         }
     }
 
