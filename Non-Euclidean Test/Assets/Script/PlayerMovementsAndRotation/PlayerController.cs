@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     [Space]
     [Header("Light")]
     public Light[] Lights;
+    [SerializeField] float LightCounter;
 
     private void Update()
     {
@@ -37,6 +38,12 @@ public class PlayerController : MonoBehaviour
         Sprint();
 
         Cursor.visible = false;
+    }
+
+    private void Awake()
+    {
+        isFire = false;
+        LightCounter = 0;
     }
 
     private void Movements()
