@@ -185,9 +185,11 @@ MonoBehaviour:
   Player: {fileID: 5298343863880251512}
   PlayerController: {fileID: 5298343863880251515}
   PickUpObj: {fileID: 0}
-  CurrentObj: {fileID: 5298343863880251518}
+  PickUpScript: {fileID: 0}
   isEntered: 0
-  PickUp: 0
+  X: 0
+  Y: 0
+  Z: 0
 --- !u!1 &130667655
 GameObject:
   m_ObjectHideFlags: 0
@@ -3588,9 +3590,11 @@ MonoBehaviour:
   Player: {fileID: 5298343863880251512}
   PlayerController: {fileID: 5298343863880251515}
   PickUpObj: {fileID: 0}
-  CurrentObj: {fileID: 5298343863880251518}
+  PickUpScript: {fileID: 0}
   isEntered: 0
-  PickUp: 0
+  X: 0
+  Y: 0
+  Z: 0
 --- !u!1001 &5298343863880251511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3681,17 +3685,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8225d428a08656a49b6511a822805957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5298343863880251518 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5894450241378862196, guid: c3cb3ed38d11ccd4686168e30dbe646c,
-    type: 3}
-  m_PrefabInstance: {fileID: 5298343863880251511}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5298343863880251512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f42828b215c674b81a0d35d13e6ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
