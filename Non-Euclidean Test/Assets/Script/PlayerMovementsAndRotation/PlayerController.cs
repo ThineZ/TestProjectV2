@@ -29,6 +29,11 @@ public class PlayerController : MonoBehaviour
     [Header("Light")]
     public Light[] Lights;
 
+    [Space]
+    [Header("Puzzle Pieces")]
+    public Transform PiecesOne;
+    public Transform PiecesTwo;
+
     private void Update()
     {
         Movements();
@@ -85,6 +90,55 @@ public class PlayerController : MonoBehaviour
                 Lights[1].enabled = true;
                 Lights[2].enabled = true;
             }
+
+            // Left Pilar Move Left
+            if (isFire && hitInfo.transform.gameObject.name == "PieceOneMoveLeft")
+            {
+                PiecesOne.position = new Vector3(PiecesOne.position.x, PiecesOne.position.y, PiecesOne.position.z - 2.5f);
+            }
+            
+            // Right Pilar Move Right
+            if (isFire && hitInfo.transform.gameObject.name == "PieceOneMoveRight")
+            {
+                PiecesOne.position = new Vector3(PiecesOne.position.x, PiecesOne.position.y, PiecesOne.position.z + 2.5f);
+            }
+
+            // Right Pilar Rotate ClockWise
+            if (isFire && hitInfo.transform.gameObject.name == "PieceOneRotateClockwise")
+            {
+                PiecesOne.Rotate(PiecesOne.rotation.x, PiecesOne.rotation.y + 90f, PiecesOne.rotation.z, Space.World);
+            }            
+            
+            // Left Pilar Rotate Counter-ClockWise
+            if (isFire && hitInfo.transform.gameObject.name == "PieceOneRotateCounterClockwise")
+            {
+                PiecesOne.Rotate(PiecesOne.rotation.x, PiecesOne.rotation.y - 90f, PiecesOne.rotation.z, Space.World);
+            }
+
+            // Left Pilar Move Left
+            if (isFire && hitInfo.transform.gameObject.name == "PieceTwoMoveLeft")
+            {
+                PiecesTwo.position = new Vector3(PiecesTwo.position.x, PiecesTwo.position.y, PiecesTwo.position.z - 2.5f);
+            }
+
+            // Right Pilar Move Right
+            if (isFire && hitInfo.transform.gameObject.name == "PieceTwoMoveRight")
+            {
+                PiecesTwo.position = new Vector3(PiecesTwo.position.x, PiecesTwo.position.y, PiecesTwo.position.z + 2.5f);
+            }
+
+            // Left Pilar Rotate Counter-ClockWise
+            if (isFire && hitInfo.transform.gameObject.name == "PieceTwoRotateCounterClockwise")
+            {
+                PiecesTwo.Rotate(PiecesTwo.rotation.x, PiecesTwo.rotation.y - 90f, PiecesTwo.rotation.z, Space.World);
+            }
+
+            // Right Pilar Rotate ClockWise
+            if (isFire && hitInfo.transform.gameObject.name == "PieceTwoRotateClockwise")
+            {
+                PiecesTwo.Rotate(PiecesTwo.rotation.x, PiecesTwo.rotation.y + 90f, PiecesTwo.rotation.z, Space.World);
+            }
+
 
             isInteract = false;
         }
