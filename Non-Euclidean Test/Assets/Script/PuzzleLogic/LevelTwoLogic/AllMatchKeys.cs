@@ -13,6 +13,11 @@ public class AllMatchKeys : MonoBehaviour
     [Header("Match Keys SC")]
     public MatchKeys[] MatchKeysSC;
 
+    [Space]
+    [Header("MP Items")]
+    public Animator MP_Ball;
+    public GameObject Projector;
+
     private void Update()
     {
         Active();
@@ -32,5 +37,11 @@ public class AllMatchKeys : MonoBehaviour
             }
         }
         Debug.Log("----------------------------------------------------------------------------------");
+
+        if (AllCorrect)
+        {
+            MP_Ball.SetBool("Play", true);
+            Projector.SetActive(true);
+        }
     }
 }
