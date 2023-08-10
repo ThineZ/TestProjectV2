@@ -44,11 +44,18 @@ public class TeleGateWCam : MonoBehaviour
                 PickUpObj.transform.parent = Player.transform;
             }
             PlayerController.isDead = true;
+            Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+            Player.GetComponent<Rigidbody>().freezeRotation = true;
             yield return new WaitForSeconds(0.01f);
             Player.transform.rotation = Quaternion.Euler(Player.transform.rotation.eulerAngles + new Vector3(X,Y,Z));
             Player.transform.position = Receiver.transform.position;
             yield return new WaitForSeconds(0.01f);
             PlayerController.isDead = false;
+            Player.GetComponent<Rigidbody>().freezeRotation = true;
+            Player.GetComponent<Rigidbody>().constraints &= ~RigidbodyConstraints.FreezePositionX;
+            Player.GetComponent<Rigidbody>().constraints &= ~RigidbodyConstraints.FreezePositionY;
+            Player.GetComponent<Rigidbody>().constraints &= ~RigidbodyConstraints.FreezePositionZ;
+
             if (!isEntered && PickUpObj != null)
             {
                 PickUpObj.transform.parent = null;

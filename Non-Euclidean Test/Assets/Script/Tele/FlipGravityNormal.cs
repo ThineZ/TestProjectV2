@@ -7,6 +7,12 @@ public class FlipGravityNormal : MonoBehaviour
 
     [SerializeField] public bool PlayerDectected = false;
 
+    [Space]
+    [Header("Euler Paramenters")]
+    public float X;
+    public float Y;
+    public float Z;
+
     private void Update()
     {
         if (PlayerDectected)
@@ -20,7 +26,7 @@ public class FlipGravityNormal : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             PlayerDectected = true;
-            PlayerObj.transform.rotation = Quaternion.Euler(0, 180, 0);
+            PlayerObj.transform.rotation = Quaternion.Euler(X, Y, Z);
         }
     }
 }

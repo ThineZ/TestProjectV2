@@ -27,8 +27,13 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
+<<<<<<< HEAD:Non-Euclidean Test/Assets/Animation/LightInteract.anim
         time: 1
         value: {x: 0, y: -150.2, z: 0}
+=======
+        time: 2
+        value: {x: 0, y: -180, z: 0}
+>>>>>>> origin/YS-Branch:Non-Euclidean Test/Assets/Animation/BridgeAnim/UpElevate.anim
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -53,8 +58,13 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
+<<<<<<< HEAD:Non-Euclidean Test/Assets/Animation/LightInteract.anim
         time: 1
         value: {x: -230.06078, y: 3.6, z: 39.713715}
+=======
+        time: 2
+        value: {x: 132.28992, y: 88.41, z: -163.18}
+>>>>>>> origin/YS-Branch:Non-Euclidean Test/Assets/Animation/BridgeAnim/UpElevate.anim
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -95,7 +105,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 2
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -124,8 +134,13 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
+<<<<<<< HEAD:Non-Euclidean Test/Assets/Animation/LightInteract.anim
         time: 1
         value: -230.06078
+=======
+        time: 2
+        value: 132.28992
+>>>>>>> origin/YS-Branch:Non-Euclidean Test/Assets/Animation/BridgeAnim/UpElevate.anim
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -152,8 +167,13 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
+<<<<<<< HEAD:Non-Euclidean Test/Assets/Animation/LightInteract.anim
         time: 1
         value: 3.6
+=======
+        time: 2
+        value: 88.41
+>>>>>>> origin/YS-Branch:Non-Euclidean Test/Assets/Animation/BridgeAnim/UpElevate.anim
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -180,8 +200,13 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
+<<<<<<< HEAD:Non-Euclidean Test/Assets/Animation/LightInteract.anim
         time: 1
         value: 39.713715
+=======
+        time: 2
+        value: -163.18
+>>>>>>> origin/YS-Branch:Non-Euclidean Test/Assets/Animation/BridgeAnim/UpElevate.anim
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -208,7 +233,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
+        time: 2
         value: 0
         inSlope: 0
         outSlope: 0
@@ -236,8 +261,13 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
+<<<<<<< HEAD:Non-Euclidean Test/Assets/Animation/LightInteract.anim
         time: 1
         value: -150.2
+=======
+        time: 2
+        value: -180
+>>>>>>> origin/YS-Branch:Non-Euclidean Test/Assets/Animation/BridgeAnim/UpElevate.anim
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -264,7 +294,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
+        time: 2
         value: 0
         inSlope: 0
         outSlope: 0
