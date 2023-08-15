@@ -92,49 +92,49 @@ public class PlayerController : MonoBehaviour
             }
 
             // Left Pilar Move Left
-            if (isFire && hitInfo.transform.gameObject.name == "PieceOneMoveLeft" || isFire && hitInfo.transform.gameObject.layer == 12)
+            if (isInteract && hitInfo.transform.gameObject.name == "PieceOneMoveLeft" || isFire && hitInfo.transform.gameObject.layer == 12)
             {
                 PiecesOne.position = new Vector3(PiecesOne.position.x, PiecesOne.position.y, PiecesOne.position.z - 2.5f);
             }
             
             // Right Pilar Move Right
-            if (isFire && hitInfo.transform.gameObject.name == "PieceOneMoveRight" || isFire && hitInfo.transform.gameObject.layer == 12)
+            if (isInteract && hitInfo.transform.gameObject.name == "PieceOneMoveRight" || isFire && hitInfo.transform.gameObject.layer == 12)
             {
                 PiecesOne.position = new Vector3(PiecesOne.position.x, PiecesOne.position.y, PiecesOne.position.z + 2.5f);
             }
 
             // Right Pilar Rotate ClockWise
-            if (isFire && hitInfo.transform.gameObject.name == "PieceOneRotateClockwise" || isFire && hitInfo.transform.gameObject.layer == 12)
+            if (isInteract && hitInfo.transform.gameObject.name == "PieceOneRotateClockwise" || isFire && hitInfo.transform.gameObject.layer == 12)
             {
                 PiecesOne.Rotate(PiecesOne.rotation.x, PiecesOne.rotation.y + 90f, PiecesOne.rotation.z, Space.World);
             }            
             
             // Left Pilar Rotate Counter-ClockWise
-            if (isFire && hitInfo.transform.gameObject.name == "PieceOneRotateCounterClockwise" || isFire && hitInfo.transform.gameObject.layer == 12)
+            if (isInteract && hitInfo.transform.gameObject.name == "PieceOneRotateCounterClockwise" || isFire && hitInfo.transform.gameObject.layer == 12)
             {
                 PiecesOne.Rotate(PiecesOne.rotation.x, PiecesOne.rotation.y - 90f, PiecesOne.rotation.z, Space.World);
             }
 
             // Left Pilar Move Left
-            if (isFire && hitInfo.transform.gameObject.name == "PieceTwoMoveLeft" || isFire && hitInfo.transform.gameObject.layer == 12)
+            if (isInteract && hitInfo.transform.gameObject.name == "PieceTwoMoveLeft" || isFire && hitInfo.transform.gameObject.layer == 12)
             {
                 PiecesTwo.position = new Vector3(PiecesTwo.position.x, PiecesTwo.position.y, PiecesTwo.position.z - 2.5f);
             }
 
             // Right Pilar Move Right
-            if (isFire && hitInfo.transform.gameObject.name == "PieceTwoMoveRight" || isFire && hitInfo.transform.gameObject.layer == 12)
+            if (isInteract && hitInfo.transform.gameObject.name == "PieceTwoMoveRight" || isFire && hitInfo.transform.gameObject.layer == 12)
             {
                 PiecesTwo.position = new Vector3(PiecesTwo.position.x, PiecesTwo.position.y, PiecesTwo.position.z + 2.5f);
             }
 
             // Left Pilar Rotate Counter-ClockWise
-            if (isFire && hitInfo.transform.gameObject.name == "PieceTwoRotateCounterClockwise" || isFire && hitInfo.transform.gameObject.layer == 12)
+            if (isInteract && hitInfo.transform.gameObject.name == "PieceTwoRotateCounterClockwise" || isFire && hitInfo.transform.gameObject.layer == 12)
             {
                 PiecesTwo.Rotate(PiecesTwo.rotation.x, PiecesTwo.rotation.y - 90f, PiecesTwo.rotation.z, Space.World);
             }
 
             // Right Pilar Rotate ClockWise
-            if (isFire && hitInfo.transform.gameObject.name == "PieceTwoRotateClockwise" || isFire && hitInfo.transform.gameObject.layer == 12)
+            if (isInteract && hitInfo.transform.gameObject.name == "PieceTwoRotateClockwise" || isFire && hitInfo.transform.gameObject.layer == 12)
             {
                 PiecesTwo.Rotate(PiecesTwo.rotation.x, PiecesTwo.rotation.y + 90f, PiecesTwo.rotation.z, Space.World);
             }

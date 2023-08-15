@@ -22,7 +22,7 @@ public class MatchKeys : MonoBehaviour
         }
         else
         {
-            Debug.Log("WRONG YOU FK!");
+            Debug.Log("WRONG!");
             Correct = false;
         }
     }

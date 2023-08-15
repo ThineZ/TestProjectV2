@@ -1,12 +1,16 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BrightElevateLogic : MonoBehaviour
 {
     [Header("Bridge Animation")]
-    public Animator Anim;
     [Space]
+    public Animator Anim;
+
     [Header("Match CS")]
+    [Space]
     public MatchPuuzleLogic[] MPL;
+    
 
     private void Update()
     {
@@ -15,9 +19,7 @@ public class BrightElevateLogic : MonoBehaviour
 
     private void MatchDetect()
     {
-        if (MPL[0].gameObject.GetComponent<MeshRenderer>().material.color != MPL[0].Mat.color && 
-            MPL[1].gameObject.GetComponent<MeshRenderer>().material.color != MPL[1].Mat.color &&
-            MPL[2].gameObject.GetComponent<MeshRenderer>().material.color != MPL[2].Mat.color)
+        if (MPL[0].ifColl && MPL[1].ifColl && MPL[2].ifColl)
         {
             Anim.SetBool("AllMatch", true);
         }
