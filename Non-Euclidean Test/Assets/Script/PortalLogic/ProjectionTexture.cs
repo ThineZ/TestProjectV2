@@ -2,10 +2,8 @@ using UnityEngine;
 
 public class ProjectionTexture : MonoBehaviour
 {
-
     public Camera ProjectionCamera;
     public Material ProjectionCameraMat;
-
 
     void Start()
     {
