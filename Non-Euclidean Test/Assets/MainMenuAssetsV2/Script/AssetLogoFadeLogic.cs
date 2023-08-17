@@ -10,11 +10,11 @@ public class AssetLogoFadeLogic : MonoBehaviour
     IEnumerator AnimFSM()
     {
         Logo.SetBool("IfLogoFade", true);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         FadingTitle.SetBool("Play", true);
     }
 
-    private void Start()
+    private void Awake()
     {
         StartCoroutine(AnimFSM());
     }

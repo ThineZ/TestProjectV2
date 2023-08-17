@@ -34,14 +34,17 @@ public class PlayerController : MonoBehaviour
     public Transform PiecesOne;
     public Transform PiecesTwo;
 
+    private void Start()
+    {
+        Cursor.visible = false;
+    }
+
     private void Update()
     {
         Movements();
         Raycasts();
         DeadCheck();
         Sprint();
-
-        Cursor.visible = false;
     }
 
     private void Movements()

@@ -18,6 +18,10 @@ public class AllMatchKeys : MonoBehaviour
     public Animator MP_Ball;
     public GameObject Projector;
 
+    [Space]
+    [Header("Lvl 3")]
+    public GameObject Lvl3;
+
     private void Update()
     {
         Active();
@@ -42,6 +46,7 @@ public class AllMatchKeys : MonoBehaviour
         {
             MP_Ball.SetBool("Play", true);
             Projector.SetActive(true);
+            Lvl3.SetActive(true);
         }
     }
 }
