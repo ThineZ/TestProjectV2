@@ -1,10 +1,8 @@
-using System.Collections;
 using UnityEngine;
-using TMPro;
 
 public class FadeInSectionLogic : MonoBehaviour
 {
-    [SerializeField] KeyCode AllKey;
+    //[SerializeField] KeyCode AllKey;
     [Space]
     [Header("FadeIn Parameter")]
     public GameObject CanvasFadeIn;
@@ -16,23 +14,26 @@ public class FadeInSectionLogic : MonoBehaviour
     [Header("Border Art Fade In")]
     public Animator[] BorderArt;
 
-    private void OnGUI()
+    //private void OnGUI()
+    //{
+    //    Event e = Event.current;
+    //    if (e.isKey)
+    //    {
+    //        AllKey = e.keyCode;
+    //        Debug.Log(AllKey);
+    //        StartCoroutine(Fade());
+    //    }
+    //}
+    private void Update()
     {
-        Event e = Event.current;
-        if (e.isKey)
-        {
-            AllKey = e.keyCode;
-            Debug.Log(AllKey);
-            StartCoroutine(Fade());
-        }
+        Fade();
     }
-
-    IEnumerator Fade()
+    public void Fade()
     {
-        if (Input.GetKeyDown(AllKey))
+        if (Input.anyKeyDown)
         {
             FadeInSection.SetBool("IfAnyKeyPressed", true);
-            yield return new WaitForSeconds(1f);
+            //yield return new WaitForSeconds(1f);
             FadeInText[0].SetBool("FadeInText", true);
             FadeInText[1].SetBool("FadeInText", true);
             FadeInText[2].SetBool("FadeInText", true);
