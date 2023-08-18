@@ -7,4 +7,9 @@ public class ToLvl1 : MonoBehaviour
     {
         SceneManager.LoadScene(1, LoadSceneMode.Additive);
     }
+
+    public void exit()
+    {
+        Application.Quit();
+    }
 }
